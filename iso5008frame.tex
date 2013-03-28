@@ -1,4 +1,4 @@
-%   DIN 5008 nach dem Stand vom April 2011.
+%	 DIN 5008 nach dem Stand vom April 2011.
 %    A für Geschaeftsbriefe mit kleinem Briefkopf
 %    B für Geschaeftsbriefe mit erweitertem Briefkopf
 
@@ -22,8 +22,8 @@
 
 	% === Switches  ===	%	toggletrue	togglefalse | <<< Hier editieren >>>
 	\toggletrue{printN} % zeigt Gemeinsamkeiten 
-	\toggletrue{printA}	% zeige DIN 5008 A ?
-	\togglefalse{printB}% zeige DIN 5008 B ?
+	\togglefalse{printA}	% zeige DIN 5008 A ?
+	\toggletrue{printB}% zeige DIN 5008 B ?
 	\toggletrue{printX}	% zeigt extras
 	\togglefalse{printT}% Spielwiese
 	
@@ -134,22 +134,11 @@
 		\markB(\linksStd,-114.3mm)
 		\printB{\put(\linksStd,-114.3mm-5mm){\parbox[b][5mm][t]{30mm}{Betreff}}}
 		% Dem Betreffvermerk folgen zwei Leerzeilen.
-		% Der Anrede folgt eine Leerzeile.
-	}%
+		% Der Anrede folgt eine Leerzeile.	
+		\printX{\multiput(0,-267mm)(.01\paperwidth,0){100}{\line(1,0){.005\paperwidth}}}% vorgeschlagene letzte Zeile
+	}%DINmtext
   
-	\AtTextCenter{
-	%  \put(0mm,-40mm){%
-	%    \textcolor{blue!25}{\circle*{.5\textwidth}}}%
-	}%
 	\AtPageLowerLeft{%
-	%\multiput(startH, startV)(Vector? .01\paperwidth,0){laenge(in %?) 100}{zeichenrichtung der punkte \line(1,0){ punktierungslaenge .005\paperwidth}}
-	%\multiput(0,10mm)(.01\paperwidth,0){50}{\line(1,0){.001\paperwidth}}%
-	%\put(horziontaler start,vertikaler start){\vector(0,1){seitenlaenge 10cm}}%
-	%\put(.1\paperwidth,.1\paperwidth){\vector(1,1){10cm}}%
-	%\put(.5\paperwidth,0.5in){\vector(0,-1){.5in}}%
-	%\put(.5\paperwidth,0){\makebox(0,.5in)[l]{ .5"}}%
-	}%
-	%\AtTextCenter{%
-	%  \makebox(0,0)[c]{\rotatebox{45}{\color{yellow}\Huge Draft of an example}}%
-	%}
+		\printN{\multiput(0,16.9mm)(.01\paperwidth,0){100}{\line(1,0){.005\paperwidth}}}% max letzte Zeile
+	}
 }
